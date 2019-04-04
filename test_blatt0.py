@@ -1,7 +1,5 @@
-#from blatt0 import fizz_buzz
-#from blatt0 import solve_equation
-#from blatt0 import myint, mybin
-from blatt0 import is_palindrome, pascal, flatten
+from blatt0 import mybin, myint
+from blatt0 import is_palindrome, pascal, flatten, solve_equation, fizz_buzz
 import random
 
 
@@ -19,11 +17,21 @@ def test_flatten():
 
 
 def test_fizz_buzz():
-    assert 4 == 15
+    assert fizz_buzz(2) == [1, 2]
+    assert fizz_buzz(4) == [1, 2, 'fizz', 4]
+    assert fizz_buzz(8) == [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8]
+    assert fizz_buzz(9) == [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8, 'fizz']
+    assert fizz_buzz(33) == [1, 2, 'fizz', 4, 'buzz', 'fizz', 7, 8,
+                             'fizz', 'buzz', 11, 'fizz', 13, 14,
+                             'fizzbuzz', 16, 17, 'fizz', 19, 'buzz',
+                             'fizz', 22, 23, 'fizz', 'buzz', 26, 'fizz',
+                             28, 29, 'fizzbuzz', 31, 32, 'fizz']
 
 
 def test_solve_equation():
-    assert 17 < 4
+    assert solve_equation(1, 1, 1) == {}
+    assert solve_equation(2, 4, -2.5) == {-2.5, 0.5}
+    assert solve_equation(0, 1, 1) == {-1}
 
 
 def test_int_to_bin():
